@@ -86,8 +86,17 @@ var FormView = Backbone.View.extend(
 		* @returns {Boolean} Returns false to stop propagation
 		*/
 		cancel: function () {
-			// clean up form
-			this.remove();
+			var r = true;
+			var text = this.model.get('text');
+			var input = this.$el.find('.text').val();
+			// check if text is changed and show up confirmation
+			if ( (typeof text == 'undefined' && input != '') || 
+						(typeof text != 'undefined' && text != input) )
+			{
+				r = confirm('Are you sure not to save your changes?');
+			}
+			// remove only the text is unchanged and confirmed
+			if (r == true) this.remove();
 			return false;
 		},
 		
