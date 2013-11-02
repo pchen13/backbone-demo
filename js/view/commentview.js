@@ -70,6 +70,7 @@ var CommentView = Backbone.View.extend(
 		edit: function () {
 			$('.commentform .cancel').click();
 			if ($('.commentform').length > 0) return false;
+			
 			// create new FormView instance to edit the comment
 			var formview = new FormView({model: this.model});
 			
