@@ -68,6 +68,9 @@ var CommentView = Backbone.View.extend(
 		 * @returns {Boolean} Returns false to stop propagation
 		 */
 		edit: function () {
+			// remove opened form
+			$('.commentform').remove();
+			
 			// create new FormView instance to edit the comment
 			var formview = new FormView({model: this.model});
 			

@@ -32,6 +32,9 @@ var NewButtonView = Backbone.View.extend(
 		 * @returns {Boolean} Returns false to stop propagation
 		 */
 		createComment: function () {
+			// remove opened form
+			$('.commentform').remove();
+			
 			// create new comment model
 			var comment = new CommentModel({});
 		
