@@ -52,15 +52,14 @@ body {
 }
 
 .commentform .container{
-	position: absolute;
-	top: 20px;
+	position: relative;
 	z-index: 1002;
 	
 	background-color: yellow;
 	border: 1px solid green;
 	color: green;
 	padding: 15px;
-	margin: 5px 0px 5px 30px;
+	margin: 50px auto 0;
 	width: 400px;
 }
 
