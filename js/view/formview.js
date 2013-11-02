@@ -48,7 +48,7 @@ var FormView = Backbone.View.extend(
 		render: function () {
 			var template = $('#form-template').text();
 			var template_vars = {
-				author: this.model.get('author'),
+				author: this.getAuthor(),
 				text: this.model.get('text')
 			};
 			this.$el.html(Mustache.to_html(template, template_vars));
@@ -80,6 +80,8 @@ var FormView = Backbone.View.extend(
 			
 			// remove form view from DOM and memory
 			this.remove();
+			// store last committed author
+			this.storeAuthor();
 			return false;
 		},
 		
@@ -152,6 +154,12 @@ var FormView = Backbone.View.extend(
 				text.removeClass('error');
 			}
 			return valid;
+		},
+		storeAuthor: function(){
+			localStorage.comment_author = this.model.get('author');
+		},
+		getAuthor: function(){
+			return localStorage.comment_author;
 		}
 	}
 );

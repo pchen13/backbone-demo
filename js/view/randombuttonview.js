@@ -38,7 +38,8 @@ var RandomButtonView = Backbone.View.extend(
 					author: 'serif'
 				}));
 			}
-
+			// store last committed author
+			localStorage.comment_author = 'serif';
 			// return false to stop event propagation
 			return false;
 		}
