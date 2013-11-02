@@ -54,3 +54,30 @@ body {
 .commentform textarea, .commentform input {
 	width: 350px;
 }
+
+.modal{
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	z-index: 1000;
+	width: 110%;
+	height: 110%;
+}
+.modal .background{
+	position: absolute;
+	z-index: 1001;
+	width: 100%;
+	height: 100%;
+	background-color: grey;
+	opacity:0.6;
+	filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+.modal .container{
+	position: absolute;
+	top: 20px;
+	z-index: 1002;
+}
+.modal .close{
+	float: right;
+	padding: 10px;
+}

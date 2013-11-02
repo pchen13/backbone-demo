@@ -28,10 +28,18 @@
 				<button class="cancel"> Cancel </button>
 			</form>
 		</script>
+		<script type="text/jquery-x-template" id="modal-template">
+			<div class="background"></div>
+			<div class="content">
+				<div class="close button">X</div>
+				{{html}}
+			</div>
+		</script>
 		
 		<!-- Application files -->
 		<script type="text/javascript" src="js/model/commentmodel.js"></script>
 		<script type="text/javascript" src="js/model/commentcollection.js"></script>
+		<script type="text/javascript" src="js/view/modalview.js"></script>
 		<script type="text/javascript" src="js/view/commentview.js"></script>
 		<script type="text/javascript" src="js/view/formview.js"></script>
 		<script type="text/javascript" src="js/view/listview.js"></script>
