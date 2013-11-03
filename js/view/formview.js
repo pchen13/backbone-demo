@@ -158,6 +158,7 @@ var FormView = Backbone.View.extend(
 		storeAuthor: function(){
 			localStorage.comment_author = this.model.get('author');
 		},
+		// localStorage not available on IE open as local file
 		getAuthor: function(){
 			return localStorage.comment_author;
 		}
