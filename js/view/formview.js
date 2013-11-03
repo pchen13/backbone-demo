@@ -61,6 +61,8 @@ var FormView = Backbone.View.extend(
 		 * @returns {Boolean} Returns false to stop propagation
 		 */
 		submit: function () {
+			if(!this.validate()) return false;
+			
 			// set values from form on model
 			this.model.set({
 				author: this.$el.find('.author').val(),
@@ -127,6 +129,16 @@ var FormView = Backbone.View.extend(
 				r = confirm('Are you sure not to save your changes?');
 			}
 			return r;
+				author.removeClass('error');
+			}
+			if (text.val().length == 0){
+				errDiv.append("<li>Text can not be empty</li>");
+				text.addClass('error');
+				valid = false;
+			}else{
+				text.removeClass('error');
+			}
+			return valid;
 		}
 	}
 );

@@ -76,3 +76,7 @@ body {
 	opacity:0.6;
 	filter:alpha(opacity=60); /* For IE8 and earlier */
 }
+
+.error{
+	border: 1px solid red;
+}
