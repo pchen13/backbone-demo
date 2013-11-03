@@ -38,6 +38,8 @@ var FormView = Backbone.View.extend(
 		initialize: function () {
 			this.model.on('change', this.updateFields, this);
 			this.model.on('destroy', this.remove, this);
+			// remove opened form
+			$('.commentform').remove();
 		},
 		
 		/**
