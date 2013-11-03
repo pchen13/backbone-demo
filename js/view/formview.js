@@ -52,6 +52,8 @@ var FormView = Backbone.View.extend(
 					text: this.model.get('text')
 				};
 				this.$el.html(Mustache.to_html(template, template_vars));
+			}else{
+				this.$el = "";
 			}
 			return this;
 		},
@@ -132,11 +134,7 @@ var FormView = Backbone.View.extend(
 		
 		clear: function(){
 			$('.commentform .cancel').click();
-			var exist = $('.commentform').length > 0;
-			if(exist){
-				this.$el = "";
-			}
-			return !exist;
+			return $('.commentform').length == 0;
 		}
 	}
 );
