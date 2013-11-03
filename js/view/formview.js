@@ -129,6 +129,19 @@ var FormView = Backbone.View.extend(
 				r = confirm('Are you sure not to save your changes?');
 			}
 			return r;
+		},
+		
+		validate: function(){
+			var valid = true;
+			var author = this.$el.find('.author');
+			var text = this.$el.find('.text');
+			var errDiv = this.$el.find('.errors');
+			errDiv.html("");
+			if (author.val().length == 0){
+				errDiv.append("<li>Author can not be empty</li>");
+				author.addClass('error');
+				valid = false;
+			}else{
 				author.removeClass('error');
 			}
 			if (text.val().length == 0){
