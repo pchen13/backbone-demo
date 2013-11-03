@@ -29,7 +29,8 @@ var FormView = Backbone.View.extend(
 		 */
 		events: {
 			'click .submit': 'submit',
-			'click .cancel': 'cancel'
+			'click .cancel': 'cancel',
+			'click .background': 'cancel'
 		},
 		
 		/**
