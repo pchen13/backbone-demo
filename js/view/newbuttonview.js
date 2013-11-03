@@ -32,6 +32,8 @@ var NewButtonView = Backbone.View.extend(
 		 * @returns {Boolean} Returns false to stop propagation
 		 */
 		createComment: function () {
+			$('.commentform .cancel').click();
+			if ($('.commentform').length > 0) return false;
 			// create new comment model
 			var comment = new CommentModel({});
 		

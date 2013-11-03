@@ -45,16 +45,12 @@ var FormView = Backbone.View.extend(
 		 * @returns {FormView} Returns the view instance itself, to allow chaining view commands.
 		 */
 		render: function () {
-			if(this.clear()){
-				var template = $('#form-template').text();
-				var template_vars = {
-					author: this.model.get('author'),
-					text: this.model.get('text')
-				};
-				this.$el.html(Mustache.to_html(template, template_vars));
-			}else{
-				this.$el = "";
-			}
+			var template = $('#form-template').text();
+			var template_vars = {
+				author: this.model.get('author'),
+				text: this.model.get('text')
+			};
+			this.$el.html(Mustache.to_html(template, template_vars));
 			return this;
 		},
 	
@@ -130,11 +126,6 @@ var FormView = Backbone.View.extend(
 				r = confirm('Are you sure not to save your changes?');
 			}
 			return r;
-		},
-		
-		clear: function(){
-			$('.commentform .cancel').click();
-			return $('.commentform').length == 0;
 		}
 	}
 );
